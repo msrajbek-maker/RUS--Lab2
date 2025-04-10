@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 317.4, "left": 105, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 121.2,
+      "left": -159.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 157.55,
+      "left": -19.2,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -70.6,
+      "left": 624,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -203.6,
+      "left": 197.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 198,
+      "left": -159.4,
+      "attrs": { "color": "limegreen" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 330.4, "left": 511.02, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 328.8,
+      "left": -94.2,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 253.55,
+      "left": -19.2,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "led1:C", "uno:GND.1", "green", [ "v19.2", "h364.9" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "uno:13", "green", [ "h152.4", "h19.2", "v144" ] ],
+    [ "uno:2", "btn1:2.r", "green", [ "h4.1", "v-38.4", "h383.8" ] ],
+    [ "btn1:1.l", "uno:GND.1", "green", [ "h-96", "v-124.8", "h-345.9" ] ],
+    [ "keypad1:R1", "uno:3", "green", [ "v67.2", "h-148" ] ],
+    [ "keypad1:R2", "uno:4", "green", [ "v76.8", "h-19.6", "v67.2", "h34.5" ] ],
+    [ "keypad1:R3", "uno:5", "green", [ "h-0.3", "v67.2", "h-42.2" ] ],
+    [ "keypad1:R4", "uno:6", "green", [ "h-0.2", "v38.4", "h-205.3" ] ],
+    [ "uno:8", "keypad1:C1", "green", [ "v-67.2", "h96.5" ] ],
+    [ "uno:9", "keypad1:C2", "green", [ "v-76.8", "h116" ] ],
+    [ "uno:10", "keypad1:C3", "green", [ "v-96", "h135.25" ] ],
+    [ "uno:11", "keypad1:C4", "green", [ "v-105.6", "h154.5" ] ],
+    [ "led2:C", "uno:GND.2", "green", [ "v336", "h380.5" ] ],
+    [ "uno:5V", "pir1:VCC", "red", [ "v57.5", "h320.6" ] ],
+    [ "pir1:GND", "uno:GND.3", "black", [ "v86.4", "h-321.06" ] ],
+    [ "uno:7", "pir1:OUT", "green", [ "h138", "v144", "h124.94" ] ],
+    [ "bz1:1", "uno:GND.2", "green", [ "v134.4", "h341.7" ] ],
+    [ "bz1:2", "uno:A0", "green", [ "v115.2", "h370.2" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "r2:2", "uno:12", "green", [ "h200.4", "v67.2" ] ]
+  ],
+  "dependencies": {}
+}
